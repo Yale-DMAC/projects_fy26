@@ -21,12 +21,7 @@ class ExpiredAccessNotes < AbstractReport
   def query_string
     query = <<~SOME_SQL
       SELECT CONCAT('/repositories/', ao.repo_id, '/archival_objects/', n.archival_object_id) as uri, ao.display_string as resource_title, ao.id as id, re.name as repository, 
-      CONCAT_WS('-', 
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[0]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[1]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]')),
-	  JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[3]'))
-      ) AS identifier,
+      JSON_UNQUOTE(JSON_EXTRACT(resource.identifier, '$[0]')) AS identifier,
       JSON_UNQUOTE(JSON_EXTRACT(CONVERT(n.notes USING utf8), '$.rights_restriction.end')) AS expiration_date
       FROM note n 
       LEFT JOIN archival_object ao on ao.id = n.archival_object_id 
@@ -50,12 +45,7 @@ class ExpiredAccessNotes < AbstractReport
     query += <<~SOME_SQL
       UNION ALL
       SELECT CONCAT('/repositories/', r.repo_id, '/resources/', n.resource_id) as uri, r.title as resource_title, r.id as id, re.name as repository,
-      CONCAT_WS('-', 
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[0]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[1]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]')),
-	  JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[3]'))
-      ) AS identifier,
+      JSON_UNQUOTE(JSON_EXTRACT(resource.identifier, '$[0]')) AS identifier,
       JSON_UNQUOTE(JSON_EXTRACT(CONVERT(n.notes USING utf8), '$.rights_restriction.end')) AS expiration_date
       FROM note n 
       LEFT JOIN resource r on r.id = n.resource_id 
