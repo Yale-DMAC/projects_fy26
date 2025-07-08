@@ -1,5 +1,5 @@
 # SCMS FY26 Project Repo
-Last updated 07/01/2025 by Kylene Hutchinson
+Last updated 07/08/2025 by Kylene Hutchinson
 
 ## Overview
 These are projects and tasks worked on by the SCMS unit during the Fiscal Year July 2025 - June 2026.  
@@ -9,3 +9,5 @@ These are projects and tasks worked on by the SCMS unit during the Fiscal Year J
 ## Directory
 | Name | Contributors | System | Notes |
 | ---- | ------------ | ------ | ---- |
+| [Digital Object Reports](/digital_object_reports) | Kylene Hutchinson | ArchivesSpace | A custom report for the ArchivesSpace report jobs |
+| [Expired Access Notes Report](/expired_access_notes_report) | Kylene Hutchinson | ArchivesSpace | A custom report for the ArchivesSpace report jobs |

@@ -1,0 +1,128 @@
+en:
+  reports:
+    parameters:
+      from: From
+      from_tooltip:
+      to: To
+      end: End
+      locations: Locations
+      scope_by_date: Scope by Date
+      template: Template
+      call_number: Call Number
+      call_number_tooltip: Enter one more more call numbers separated by a comma and a space
+      building: Building
+      room_name: Room Name
+      parent: Parent Object ID
+      oid: Digital Object Identifier
+      url: File URL
+    formats:
+      json: JSON
+      csv: CSV
+      pdf: PDF
+      html: HTML
+      rtf: RTF
+      xlsx: XLSX
+    accession_all_accessions:
+      title: All Accessions
+      description: Returns a report with information about accessions.
+      identifier_prefix: Accession
+    archival_object_hierarchy:
+      title: Get Record Hierarchies
+      description: Returns a report with hierarchical breadcrumb information about archival object records.
+      identifier_prefix: Archival Object
+    digital_object_preservica_links:
+      title: Copy Order Fulfillment
+      description: Returns a report with descriptive data and download links to all Preservica digital access copies available for a given collection(s). Enter one or more call numbers, separated by a comma and a space (i.e. MS 56, RU 595).
+      identifier_prefix: Digital Object
+    resource_all_archival_objects:
+      title: All Archival Objects
+      description: Custom report to retrieve data about archival objects associated with a resource.
+      identifier_prefix: Resource
+    resource_all_archival_objects_sort_order:
+      title: All Archival Objects, With Sort Order
+      description: Custom report to retrieve data about archival objects associated with a resource, including sort order.
+      identifier_prefix: Resource
+    resource_acquisitions_report:
+      title: Acquisitions by Date
+      description: Custom report to retrieve acquisitions data for the current repository in a given time period.
+      identifier_prefix: Resource
+    resource_born_digital_file_level_minimum:
+      title: Born Digital File Level Minimum
+      description: Custom report to retrieve data which corresponds to the BDAWG file level minimum for a given collection.
+      identifier_prefix: Resource
+    resource_born_digital_materials:
+      title: Born Digital Materials
+      description: Custom report to retrieve born-digital materials for the current repository.
+      identifier_prefix: Resource
+    resource_box_folder_list:
+      title: Box and Folder List
+      description: Retrieves a list of top containers and subcontainers for a given call number
+      identifier_prefix: Resource
+    resource_dacs_minimum:
+      title: DACS Minimum
+      description: Custom report to perform DACS collection-level minimum analysis on the current repository.
+      identifier_prefix: Resource
+    resource_distinct_box_list:
+      title: Box List
+      description: Custom report to retrieve a box list for a given call number.
+      identifier_prefix: Resource
+    resource_expiring_restrictions:
+      title: Expiring Restrictions
+      description: Custom report to retrieve timebound restrictions for the current repository in a given time period.
+      identifier_prefix: Resource
+    resource_preservica_materials:
+      title: Digitized Materials Not in Access System
+      description: Custom report of materials in the current repositor which are in Preservica but are not in an access system.
+      identifier_prefix: Resource
+    resource_materials_in_access_system:
+      title: Materials in Access System
+      description: Custom report of all materials which are available in an online access system.
+      identifier_prefix: Resource
+    resource_unstructured_dates:
+      title: Unstructured Dates
+      description: Retrieves a report of date subrecords with a date expression but no begin or end date.
+      identifier_prefix: Resource
+    resource_created_by_month:
+      title: Resources Created Per Month
+      description: Count of resource records created by month/year
+      identifier_prefix: Resource
+    resource_components_created_by_month:
+      title: Archival Objects Created Per Month
+      description: Count of archival object records created by month/year
+      identifier_prefix: Resource
+    resource_extent_type_usage:
+      title: Extent Type Usage
+      description: Retrieves a report with a count of extent types currently in use.
+      identifier_prefix: Resource
+    top_container_no_barcodes:
+      title: Containers Without Barcodes
+      description: Report of all containers in the current repository which do not have barcodes.
+      identifier_prefix: Top Container
+    top_container_no_location:
+      title: Containers Without Locations
+      description: Report of all containers in the current repository which do not have a linked location.
+      identifier_prefix: Top Container
+    top_container_unassociated_containers:
+      title: Unassociated Containers
+      description: Custom report of all unassociated containers in the current repository.
+      identifier_prefix: Top Container
+    top_container_rooms:
+      title: Top Containers by Room
+      description: Custom Report of Top Containers in a specific Room.
+      identifier_prefix: Top Container
+    expired_access_notes:
+      title: Expired Access Notes
+      description: Report of Resources and Archival Objects with 'Conditions Governing Access' notes with expired machine actionable end-dates.
+      identifier_prefix: Archival Object
+    digital_object_links_report:
+      title: Digital Object Report
+      description: Custom Report of Digital Objects and URLs that allows keyword searching on urls, parent ids, and doi.
+      identifier_prefix: Digital Object
+
+    translation_defaults:
+      resource_uri: Resource URI
+      resource_title: Title
+      call_number: Call number
+      top_container_uri: Container URI
+      container_number: Container number
+      expiration_date: Expiration Date
