@@ -24,7 +24,8 @@ class ExpiredAccessNotes < AbstractReport
       CONCAT_WS('-', 
           JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[0]')),
           JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[1]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]'))
+          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]')),
+	  JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[3]'))
       ) AS identifier,
       JSON_UNQUOTE(JSON_EXTRACT(CONVERT(n.notes USING utf8), '$.rights_restriction.end')) AS expiration_date
       FROM note n 
@@ -52,7 +53,8 @@ class ExpiredAccessNotes < AbstractReport
       CONCAT_WS('-', 
           JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[0]')),
           JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[1]')),
-          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]'))
+          JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[2]')),
+	  JSON_UNQUOTE(JSON_EXTRACT(r.identifier, '$[3]'))
       ) AS identifier,
       JSON_UNQUOTE(JSON_EXTRACT(CONVERT(n.notes USING utf8), '$.rights_restriction.end')) AS expiration_date
       FROM note n 
