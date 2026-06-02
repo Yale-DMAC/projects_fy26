@@ -1,0 +1,13 @@
+rule "852 holding subfield t"
+when
+(not exists "852.{*,*}.t")
+then
+addSubField "852.t.1"
+end
+
+rule "reorder 852 holding"
+when
+(true)
+then
+moveSubfieldsToEndOfField "852" "h,i,x,z"
+end

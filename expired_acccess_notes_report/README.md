@@ -48,7 +48,3 @@ See [expired_access_notes.rb](expired_access_notes.rb), [en.yml](en.yml)
 
 ## Results
 Submitted custom report to YaleArchivesSpace:add_report in a pull request.
-
-# References
-
-- List of relevant links

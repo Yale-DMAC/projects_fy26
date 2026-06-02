@@ -1,0 +1,6 @@
+rule "035|9|(YUL)ead.beinecke."
+when
+not exists "035.9.(YUL)ead.beinecke*"
+then
+set indication."true"
+end

@@ -1,0 +1,9 @@
+rule "Single Item Manuscripts - 008"
+when
+(TRUE)
+then
+replaceControlContents "008.{29,1}. " with "0"
+replaceControlContents "008.{30,1}. " with "0"
+replaceControlContents "008.{31,1}. " with "0"
+replaceControlContents "008.{33,1}. " with "u"
+end
