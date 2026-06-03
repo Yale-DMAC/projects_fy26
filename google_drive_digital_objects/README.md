@@ -1,5 +1,5 @@
 # Google Drive Digital Objects
-Last updated on 12/16/2025 by Kylene Hutchinson.
+Last updated on 06/02/2025 by Kylene Hutchinson.
 
 | Start Date | End Date | Contributors | Informed Stakeholders |
 | ---------- | -------- | ------------ | --------------------- |
@@ -15,7 +15,7 @@ Google Drive links were originally used on certain archival objects due to a lac
 
 
 # Process
-See [report.sql](report.sql)
+See [report.sql](report.sql), and [report_update.sql](report_update.sql)
 
 - Create a sql query that returns archival objects with google drive digital objects attached, list archival object uri and digital object uri, include file url and identifying details such as titles.
 
@@ -25,6 +25,9 @@ See [report.sql](report.sql)
 | 12/09/2025 | Requested | Request submitted to ServiceNow |
 | 12/11/2025 | Assigned | Requested assigned to Kylene |
 | 12/15/2025 | Completed | Submitted report for review and it was accepted as is. |
+| 02/17/2026 | Request | Jenna requested an update to this report with preservica links. |
+| 02/23/2026 | Update | Jenna clarified there was some additional information she needed added to the report. |
+| 02/26/2026 | Completed | Sent the updated report. |
 
 # Review
 

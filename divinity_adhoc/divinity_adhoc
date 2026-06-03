@@ -1,0 +1,90 @@
+import csv, json, time
+from connections import API as api
+from tqdm import tqdm
+
+def get(uri):
+	if api.connect(env):
+		response = api.client.get(uri)
+		code = response.status_code
+		if code == 200:
+			result = response.json()
+			return result
+		else:
+			error = response.text
+			error = json.loads(error)
+			to_csv(uri, code, error)
+			return
+
+def post(uri, data):
+    if api.connect(env):
+        response = api.client.post(uri, json=data)
+        code = response.status_code
+        if code == 200:
+            result = response.json()
+            to_csv(uri, code, result)
+            return result, True
+        else:
+            try:
+                error = response.text
+                error = json.loads(error)
+                to_csv(uri, code, error)
+            except json.JSONDecodeError:
+                error = response.text
+                to_csv(uri, code, error)
+            return error, False
+
+def csv_config(path):
+	date_str = date_str = time.strftime("%y%m%d")
+	updatefile = open(f'{path}/{date_str}_results.csv', 'a', encoding='utf8', newline='')
+	writer = csv.DictWriter(updatefile, fieldnames=['uri', 'code', 'result'])
+	writer.writeheader()
+	return writer
+
+def to_csv(uri, code, result):
+	row_dict = {}
+	row_dict['uri'] = uri
+	row_dict['code'] = code
+	row_dict['result'] = result
+	writer.writerow(row_dict)	
+      
+def proccess_csv(file):
+    values = {}
+    with open(file, newline='', encoding='utf-8') as csvfile:
+        reader = csv.reader(csvfile)
+        headers = next(reader)
+        for i, row in enumerate(reader, start=1):
+            if row:
+                values[i] = {
+                    'uri': row[0],
+                    'url': row[10]
+                }
+    return values
+
+def backup(uri, data):
+	with open(f"{path}/backups/{uri.replace('/','_')}.json", 'w', encoding='utf8') as outfile:
+	    json.dump(data, outfile, sort_keys=True, indent=4)
+
+def update_do(values):
+     uri = f"repositories/4/digital_objects/{values['uri']}"
+     url = values['url']
+
+     record = get(uri)
+     backup(uri, record)
+     record['file_versions'][0]['file_uri'] = url
+     record['digital_object_id'] = url
+     post(uri, record)
+
+def main():
+    global env, writer, path
+    env = 'production'
+    path = 'files/divinity_adhoc'
+    writer = csv_config(path)
+    file = f'{path}/20260305_adhocdiv_dos_with_new_urls.csv'
+    values = proccess_csv(file) 
+
+    for i in tqdm(values, desc="Processing Records", unit="record"):
+        update_do(values[i])
+
+
+if __name__ == "__main__":
+    main()

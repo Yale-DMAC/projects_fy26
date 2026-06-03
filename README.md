@@ -15,3 +15,8 @@ These are projects and tasks worked on by the SCMS unit during the Fiscal Year J
 | [Google Drive Digital Objects](/google_drive_digital_objects) | Kylene Hutchinson | ArchivesSpace | A report of all digital objects with a google drive url |
 | [Preservica DCS Report](/preservica_dcs_report) | Kylene Hutchinson | ArchivesSpace | A custom report for the ArchivesSpace report jobs |
 | [Single Item Manuscripts](/single_item_manuscripts) | Kylene Hutchinson | Alma | Update of selected single item manuscripts. |
+| [Local Access Restriction Notes Report](/local_access_restriction_notes_report) | Kylene Hutchinson | ArchivesSpace | Report of Collection level records with a local access restriction. |
+| [YCBA Instances](/ycba_instances) | Kylene Hutchinson | ArchivesSpace | Reads a csv and creates top containers to attach to relevant archival objects. |
+| [Divinity Adhoc Update](/divinity_adhoc) | Kylene Hutchinson | ArchivesSpace | Create a report of digital objects with the old adhoc url then update digital objects with new adhoc url. |
+| [Resource Report](/resource_report) | Kylene Hutchinson | ArchivesSpace | Creates a report about a specific resource. |
+| [Goobi Export Report](/goobi_export_report) | Kylene Hutchinson | ArchivesSpace | Recreates the Goobi Export report but with certain fields fixed. |
