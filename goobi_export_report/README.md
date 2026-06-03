@@ -1,5 +1,5 @@
 # Goobi Export Report
-Last updated on [DATE] by [NAME].
+Last updated on 06/03/2026 by Kylene Hutchinson.
 
 | Start Date | End Date | Contributors | Informed Stakeholders |
 | ---------- | -------- | ------------ | --------------------- |
