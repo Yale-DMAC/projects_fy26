@@ -1,0 +1,138 @@
+repo_id: 11
+suppression: true
+
+# Anything that requires edits to the provided data
+transformations:
+  dep_string_1: "{DEP_NUM}"
+  dep_id_0: "{DEP_NUM[1:5]}"
+  dep_id_2: "{DEP_NUM[5:]}"
+  dep_accession_date: "{DEP_NUM[1:5]}-{DEP_NUM[5:7]}-{DEP_NUM[7:9]}"
+auto_gen_acc: false
+
+# Material types, auto_generate = true if you need the values to switch based on the 'MAT' field
+auto_generate_mat: true
+material_types:
+  audiovisual_materials: false
+  books: false
+  electronic_documents: false
+  games: false
+  jsonmodel_type: material_types
+  manuscripts: false
+  maps: false
+  microforms: false
+  photographs: false
+  realia: false
+  serials: false
+  works_of_art: false
+
+# Adds notes into one field based on whether these fields contain data if auto_generate is set to true
+auto_generate_note: true
+note_fields:
+  - source: OPR
+    label: "Operator's Initials"
+  - source: SHLV_LOC
+    label: "Shelving Location"
+  - source: NOTES
+    label: "Accession Note"
+  - source: DT_RET
+    label: "Date Returned"
+  - source: REC_D_BY
+    label: "Received By"
+  - source: ADD
+    label: "Address"
+  - source: ACC_NUM
+    label: "Accession Number"
+# Migration Note is added at the end of the list of notes every time.
+migration_note:
+  content: "Loaded to ArchivesSpace database in 2025 from DEPOSIT DBText database."
+
+# Adds listed extents if their source field has data if auto_generate is true
+auto_generate_extents: true
+extents_template:
+  - source: MIT
+    jsonmodel_type: extent
+    extent_type: manuscript_items_(accessions)
+    lock_version: 0
+    number: "{MIT}"
+    portion: part
+  - source: COL
+    jsonmodel_type: extent
+    extent_type: see_container_summary
+    lock_version: 0
+    number: "0"
+    portion: part
+    container_summary: "{COL}"
+  - source: MLF
+    jsonmodel_type: extent
+    extent_type: linear_feet
+    lock_version: 0
+    number: "{MLF}"
+    portion: part 
+    
+#Adds References if their source field has data and auto_generate is true
+auto_generate_references: true
+references_template:
+  - source: AUT_URI
+    ref: "{AUT_URI}"
+    role: creator
+    relator: aut
+  - source: OWNER_URI
+    ref: "{OWNER_URI}"
+    role: source
+    relator: dpt
+  - source: DON_URI
+    ref: "{DON_URI}"
+    role: source
+    relator: dnr
+  - source: VNA_URI
+    ref: "{VNA_URI}"
+    role: source
+    relator: bsl
+  - source: PUB_URI
+    ref: "{PUB_URI}"
+    role: source
+    relator: pbl
+
+#Add dates if their source field has data and auto_generate is true
+auto_generate_dates: true
+dates_template:
+    - source: PDT
+      expression: "{PDT}"
+      label: publication
+      date_type: inclusive
+
+# Final accession template
+template:
+  jsonmodel_type: accession
+  publish: false
+  suppress: true
+  restrictions_apply: false
+  access_restrictions: false
+  access_restrictions_note: Open without restriction
+  acquisition_type: deposit
+  user_restrictions: false
+  repository:
+    ref: "/repositories/{repo_id}"
+  material_types: "{material_types}"
+  general_note: "{note_field}"
+  content_description: "{COND}"
+  create_time: "{DTE}"
+  title: "{TTL}"
+  display_string: "{TTL}"
+  id_0: "{dep_id_0}"
+  id_1: "{DEPT}"
+  id_2: "{dep_id_2}"
+  id_3: "deposit"
+  accession_date: "{dep_accession_date}"
+  inventory: "{LIST}"
+  user_defined:
+    jsonmodel_type: user_defined
+    boolean_1: true
+    boolean_2: true
+    string_1: "{dep_string_1}"
+    repository:
+      ref: "/repositories/{repo_id}"
+  linked_agents: "{linked_agents}"
+  extents: "{extents_template}"
+  access_restrictions: false
+  access_restrictions_note: ""

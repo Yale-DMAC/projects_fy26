@@ -20,3 +20,4 @@ These are projects and tasks worked on by the SCMS unit during the Fiscal Year J
 | [Divinity Adhoc Update](/divinity_adhoc) | Kylene Hutchinson | ArchivesSpace | Create a report of digital objects with the old adhoc url then update digital objects with new adhoc url. |
 | [Resource Report](/resource_report) | Kylene Hutchinson | ArchivesSpace | Creates a report about a specific resource. |
 | [Goobi Export Report](/goobi_export_report) | Kylene Hutchinson | ArchivesSpace | Recreates the Goobi Export report but with certain fields fixed. |
+| [DBText Migration](/dbtext) | Kylene Hutchinson | ArchivesSpace | Migrates XML records in ArchivesSpace for DBText. |

@@ -1,0 +1,4 @@
+username: 'insert your archivesspace username here'
+password: 'insert your archivesspace password here'
+production: 'insert the production archivesspace base url here'
+test: 'insert the test archivesspace base url here'
