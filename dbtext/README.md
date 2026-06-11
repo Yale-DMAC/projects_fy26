@@ -22,7 +22,7 @@ Due to the fact that there were multiple databases with different mapping needs,
 There was issues not only with Record IDs being duplicates of exisiting records in ArchivesSpace, but of being duplicates of other records in the XML file. ArchivesSpace does not allow for duplicate record IDs and will reject the record. To address this we included the database name and record number in the ID3 field. This gives an added bonus of being able to easily and quickly match with the XML records if we need to for future clean up projects.
 
 # Process
-See [migrator.py](/dbtext/dbtext_migrator/migrator.py), [Normalize Folder](/dbtext/dbtext_migator/normalize), [Mapping Folder](/dbtext/dbtext_migrator/mapping), and [Connection YAML](/dbtext/dbtext_migrator/connections/conn.yml)
+See [migrator.py](/dbtext/dbtext_migrator/migrator.py), [Normalize Folder](/dbtext/dbtext_migrator/normalize), [Mapping Folder](/dbtext/dbtext_migrator/mapping), and [Connection YAML](/dbtext/dbtext_migrator/connections/conn.yml)
 - Export DBText database as an XML record.
 - Create a normalization python script that processes and cleans up XML record, and add it to [Normalize Folder](/dbtext/dbtext_migrator/normalize).
 - Create a mapping yaml and add it to the [Mapping Folder](/dbtext/dbtext_migrator/mapping).
